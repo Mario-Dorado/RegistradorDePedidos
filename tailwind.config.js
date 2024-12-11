@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'playwrite': ['Playwrite', 'sans-serif'],
+        'borel': ['Borel', 'sans-serif'],
         'poppins': ['Poppins', 'sans-serif'],
       }
     },
