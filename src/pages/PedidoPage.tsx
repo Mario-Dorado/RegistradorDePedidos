@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import usePedidoStore from '../stores/pedido.store';
@@ -64,13 +65,19 @@ const PedidoPage = () => {
         </div>
       </div>
 
-      <div className='flex justify-center'>
+      <div className='flex gap-4'>
         <button
           className='bg-pink-600 hover:bg-pink-400 text-white py-2 px-4 rounded-full transition'
           onClick={handleDownloadPDF}
         >
           Descargar como PDF
         </button>
+        <Link
+          to="/"
+          state={{ pedido: pedido }}
+          className="bg-pink-600 hover:bg-pink-400 text-white py-2 px-4 rounded-full transition">
+          Modificar datos
+        </Link>
       </div>
     </div>
   );
