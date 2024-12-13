@@ -1,8 +1,8 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { tiposMasa, tiposRelleno } from '../constants/mock-data';
-import { PedidoCreateInput } from '../types/pedido';
 import usePedidoStore from '../stores/pedido.store';
+import { PedidoCreateInput } from '../types/pedido';
 
 const initialState: PedidoCreateInput = {
   nombre: '',

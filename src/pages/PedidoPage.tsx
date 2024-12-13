@@ -1,7 +1,7 @@
-import { useRef } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
+import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import usePedidoStore from '../stores/pedido.store';
 
 const PedidoPage = () => {
