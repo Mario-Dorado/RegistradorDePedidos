@@ -14,16 +14,36 @@ const PedidoPage = () => {
     const pdfElement = pdfRef.current;
     if (!pdfElement) return;
 
-    const canvas = await html2canvas(pdfElement);
+    const canvas = await html2canvas(pdfElement, {
+      scale: 2,
+      scrollX: 0,
+      scrollY: 0,
+    });
+
     const imgData = canvas.toDataURL('image/png');
-    const pdf = new jsPDF();
-    pdf.addImage(imgData, 'PNG', 10, 10, 190, 0);
+    const pdf = new jsPDF({
+      orientation: 'portrait',
+      unit: 'mm',
+      format: [210, 210],
+    });
+
+    const pdfWidth = 190;
+    const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+
+    pdf.addImage(imgData, 'PNG', 10, 10, pdfWidth, Math.min(pdfHeight, 270));
     pdf.save('pedido.pdf');
   };
 
   return (
     <div className='flex flex-col items-center py-8'>
-      <div ref={pdfRef} className='max-w-xl w-full shadow p-6 rounded-lg border bg-white mb-4'>
+      <div
+        ref={pdfRef}
+        className='max-w-xl w-full shadow p-6 rounded-lg border bg-white mb-4'
+        style={{
+          maxHeight: '800px',
+          overflow: 'hidden', 
+        }}
+      >
         <div className='flex justify-center mb-6'>
           <img src='/logo-nobg.png' alt='Logo' className='h-24' />
         </div>
@@ -75,7 +95,8 @@ const PedidoPage = () => {
         <Link
           to="/"
           state={{ pedido: pedido }}
-          className="bg-pink-600 hover:bg-pink-400 text-white py-2 px-4 rounded-full transition">
+          className="bg-pink-600 hover:bg-pink-400 text-white py-2 px-4 rounded-full transition"
+        >
           Modificar datos
         </Link>
       </div>
