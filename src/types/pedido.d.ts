@@ -7,6 +7,8 @@ export type Pedido = {
   color: string;
   tematica: string;
   fechaRecepcion: string;
+  fechaEntrega: string;
+  horaEntrega: string;
 };
 
 export type PedidoCreateInput = {
@@ -18,4 +20,6 @@ export type PedidoCreateInput = {
   color: string;
   tematica: string;
   fechaRecepcion: string;
+  fechaEntrega: string;
+  horaEntrega: string;
 };
