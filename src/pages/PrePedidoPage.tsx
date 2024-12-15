@@ -66,36 +66,36 @@ const PrePedidoPage = () => {
   };
 
   return (
-    <div className="flex justify-center items-center">
-      <div className="max-w-xl w-full">
-        <div className="shadow p-4 my-4 mx-2 lg:mb-0 rounded-lg border">
-          <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-            <div className="flex flex-col gap-2">
-              <label htmlFor="nombre">Nombre del Cliente</label>
+    <div className='flex justify-center items-center'>
+      <div className='max-w-xl w-full'>
+        <div className='shadow p-4 my-4 mx-2 lg:mb-0 rounded-lg border'>
+          <form onSubmit={handleSubmit} className='flex flex-col gap-3'>
+            <div className='flex flex-col gap-2'>
+              <label htmlFor='nombre'>Nombre del Cliente</label>
               <input
-                type="text"
-                className="border rounded-lg h-10 p-2"
-                id="nombre"
+                type='text'
+                className='border rounded-lg h-10 p-2'
+                id='nombre'
                 value={formData.nombre}
                 onChange={handleChange}
               />
             </div>
 
-            <div className="flex flex-col gap-2">
-              <label htmlFor="direccion">Dirección</label>
+            <div className='flex flex-col gap-2'>
+              <label htmlFor='direccion'>Dirección</label>
               <textarea
-                className="border rounded-lg p-2 resize-none"
-                id="direccion"
+                className='border rounded-lg p-2 resize-none'
+                id='direccion'
                 value={formData.direccion}
                 onChange={handleChange}
               ></textarea>
             </div>
 
-            <div className="flex flex-col gap-2">
-              <label htmlFor="tipoMasa">Tipos de Masa</label>
+            <div className='flex flex-col gap-2'>
+              <label htmlFor='tipoMasa'>Tipos de Masa</label>
               <select
-                id="tipoMasa"
-                className="border rounded-lg p-2"
+                id='tipoMasa'
+                className='border rounded-lg p-2'
                 value={formData.tipoMasa}
                 onChange={handleChange}
               >
@@ -108,15 +108,15 @@ const PrePedidoPage = () => {
               </select>
             </div>
 
-            <div className="flex flex-col gap-2">
-              <label htmlFor="tipoRelleno">Tipos de Relleno</label>
+            <div className='flex flex-col gap-2'>
+              <label htmlFor='tipoRelleno'>Tipos de Relleno</label>
               <select
-                className="border rounded-lg h-10 p-2"
-                id="tipoRelleno"
+                className='border rounded-lg h-10 p-2'
+                id='tipoRelleno'
                 value={formData.tipoRelleno}
                 onChange={handleChange}
               >
-                <option value="" disabled>Selecciona una opción</option>
+                <option value='' disabled>Selecciona una opción</option>
                 {tiposRelleno.map((tipo) => (
                   <option key={`${tipo.id}-tipo-relleno`} value={tipo.nombre}>
                     {tipo.nombre}
@@ -125,74 +125,74 @@ const PrePedidoPage = () => {
               </select>
             </div>
 
-            <div className="flex flex-col gap-2">
-              <label htmlFor="cantidadPersonas">Cantidad de Personas</label>
+            <div className='flex flex-col gap-2'>
+              <label htmlFor='cantidadPersonas'>Cantidad de Personas</label>
               <input
-                type="text"
-                className="border rounded-lg h-10 p-2"
-                id="cantidadPersonas"
+                type='text'
+                className='border rounded-lg h-10 p-2'
+                id='cantidadPersonas'
                 value={formData.cantidadPersonas}
                 onChange={handleChange}
               />
             </div>
 
-            <div className="flex flex-col gap-2">
+            <div className='flex flex-col gap-2'>
               <label htmlFor="color">Color</label>
               <input
-                type="text"
-                className="border rounded-lg h-10 p-2"
-                id="color"
+                type='text'
+                className='border rounded-lg h-10 p-2'
+                id='color'
                 value={formData.color}
                 onChange={handleChange}
               />
             </div>
 
-            <div className="flex flex-col gap-2">
+            <div className='flex flex-col gap-2'>
               <label htmlFor="tematica">Temática</label>
               <input
-                type="text"
-                className="border rounded-lg h-10 p-2"
-                id="tematica"
+                type='text'
+                className='border rounded-lg h-10 p-2'
+                id='tematica'
                 value={formData.tematica}
                 onChange={handleChange}
               />
             </div>
 
-            <div className="flex flex-col gap-2">
-              <label htmlFor="fechaRecepcion">Fecha de Recepción del Pedido</label>
+            <div className='flex flex-col gap-2'>
+              <label htmlFor='fechaRecepcion'>Fecha de Recepción del Pedido</label>
               <input
-                type="date"
-                className="border rounded-lg h-10 p-2"
-                id="fechaRecepcion"
+                type='date'
+                className='border rounded-lg h-10 p-2'
+                id='fechaRecepcion'
                 value={formData.fechaRecepcion}
                 onChange={handleChange}
               />
             </div>
 
-            <div className="flex flex-col gap-2">
-              <label htmlFor="fechaEntrega">Fecha de Entrega del Pedido</label>
+            <div className='flex flex-col gap-2'>
+              <label htmlFor='fechaEntrega'>Fecha de Entrega del Pedido</label>
               <input
-                type="date"
-                className="border rounded-lg h-10 p-2"
-                id="fechaEntrega"
+                type='date'
+                className='border rounded-lg h-10 p-2'
+                id='fechaEntrega'
                 value={formData.fechaEntrega}
                 onChange={handleChange}
               />
             </div>
 
-            <div className="flex flex-col gap-2">
-              <label htmlFor="horaEntrega">Hora de Entrega del Pedido</label>
+            <div className='flex flex-col gap-2'>
+              <label htmlFor='horaEntrega'>Hora de Entrega del Pedido</label>
               <input
-                type="time"
-                className="border rounded-lg h-10 p-2"
-                id="horaEntrega"
+                type='time'
+                className='border rounded-lg h-10 p-2'
+                id='horaEntrega'
                 value={formData.horaEntrega}
                 onChange={handleChange}
               />
             </div>
 
-            <div className="flex justify-center mt-2">
-              <button className="bg-green-500 hover:bg-green-700 transition py-2 px-4 rounded-full text-white w-full">
+            <div className='flex justify-center mt-2'>
+              <button className='bg-green-500 hover:bg-green-700 transition py-2 px-4 rounded-full text-white w-full'>
                 Registrar pedido
               </button>
             </div>
