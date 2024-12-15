@@ -13,6 +13,8 @@ const initialState: PedidoCreateInput = {
   color: '',
   tematica: '',
   fechaRecepcion: new Date().toISOString().split('T')[0],
+  fechaEntrega: new Date().toISOString().split('T')[0],
+  horaEntrega: '', 
 };
 
 const PrePedidoPage = () => {
@@ -50,13 +52,13 @@ const PrePedidoPage = () => {
       !formData.cantidadPersonas ||
       !formData.color ||
       !formData.tematica ||
-      !formData.fechaRecepcion
+      !formData.fechaRecepcion ||
+      !formData.fechaEntrega ||
+      !formData.horaEntrega
     ) {
       alert('Por favor, llena todos los campos');
       return;
     }
-
-    console.log(formData);
 
     setPedido(formData);
 
@@ -90,16 +92,14 @@ const PrePedidoPage = () => {
             </div>
 
             <div className="flex flex-col gap-2">
-              <label htmlFor="tipoMasa">Tipo de Masa</label>
+              <label htmlFor="tipoMasa">Tipos de Masa</label>
               <select
                 id="tipoMasa"
                 className="border rounded-lg p-2"
                 value={formData.tipoMasa}
                 onChange={handleChange}
               >
-                <option value="" disabled>
-                  Selecciona una opción
-                </option>
+                <option value="" disabled>Selecciona una opción</option>
                 {tiposMasa.map((tipo) => (
                   <option key={`${tipo.id}-tipo-masa`} value={tipo.nombre}>
                     {tipo.nombre}
@@ -111,14 +111,12 @@ const PrePedidoPage = () => {
             <div className="flex flex-col gap-2">
               <label htmlFor="tipoRelleno">Tipos de Relleno</label>
               <select
+                className="border rounded-lg h-10 p-2"
                 id="tipoRelleno"
-                className="border rounded-lg p-2"
                 value={formData.tipoRelleno}
                 onChange={handleChange}
               >
-                <option value="" disabled>
-                  Selecciona una opción
-                </option>
+                <option value="" disabled>Selecciona una opción</option>
                 {tiposRelleno.map((tipo) => (
                   <option key={`${tipo.id}-tipo-relleno`} value={tipo.nombre}>
                     {tipo.nombre}
@@ -161,12 +159,34 @@ const PrePedidoPage = () => {
             </div>
 
             <div className="flex flex-col gap-2">
-              <label htmlFor="fechaRecepcion">Fecha de Recepción</label>
+              <label htmlFor="fechaRecepcion">Fecha de Recepción del Pedido</label>
               <input
                 type="date"
                 className="border rounded-lg h-10 p-2"
                 id="fechaRecepcion"
                 value={formData.fechaRecepcion}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <label htmlFor="fechaEntrega">Fecha de Entrega del Pedido</label>
+              <input
+                type="date"
+                className="border rounded-lg h-10 p-2"
+                id="fechaEntrega"
+                value={formData.fechaEntrega}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div className="flex flex-col gap-2">
+              <label htmlFor="horaEntrega">Hora de Entrega del Pedido</label>
+              <input
+                type="time"
+                className="border rounded-lg h-10 p-2"
+                id="horaEntrega"
+                value={formData.horaEntrega}
                 onChange={handleChange}
               />
             </div>
