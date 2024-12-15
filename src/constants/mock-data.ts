@@ -1,37 +1,37 @@
 export const tiposMasa = [
   {
     id: 1,
-    nombre: 'Masa de Bizcocho',
+    nombre: 'Bizcocho',
   },
   {
     id: 2,
-    nombre: 'Masa de Orégano',
+    nombre: 'Orégano',
   },
   {
     id: 3,
-    nombre: 'Masa de Pistacho',
+    nombre: 'Pistacho',
   },
 ];
 
 export const tiposRelleno = [
   {
     id: 1,
-    nombre: 'Relleno de Chocolate',
+    nombre: 'Chocolate',
   },
   {
     id: 2,
-    nombre: 'Relleno de Fresa',
+    nombre: 'Fresa',
   },
   {
     id: 3,
-    nombre: 'Relleno de Vainilla',
+    nombre: 'Vainilla',
   },
   {
     id: 4,
-    nombre: 'Relleno de Dulce de Leche',
+    nombre: 'Dulce de Leche',
   },
   {
     id: 5,
-    nombre: 'Relleno de Crema',
+    nombre: 'Crema',
   },
 ];
